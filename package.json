@@ -1,0 +1,21 @@
+{
+  "name": "webhere",
+  "description": "Start a webserver from the local server (using hapi). This is mostly a personal utility for now.",
+  "version": "0.0.1",
+  "author": "Jeremy Chone <jeremy.chone@gmail.com>",
+  "bin": {
+    "_wh": "server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/jeremychone/webhere/issues"
+  },
+  "dependencies": {
+    "hapi": "^13.2.1"
+  },
+
+  "homepage": "https://github.com/jeremychone/webhere",
+  "license": "BSD-3-Clause",
+  "main": "server.js",
+  "preferGlobal": true,
+  "repository": "jeremychone/webhere"
+}

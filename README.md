@@ -10,7 +10,7 @@ From Ted Patrick <ted@tedpatrick.com> (http://tedpatrick.com/)
 ```
 npm install -g https://github.com/jeremychone/node-webhere.git
 ```
-Note yet on npm
+Note: Not yet on npm
 
 
 

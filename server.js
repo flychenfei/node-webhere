@@ -13,7 +13,14 @@ if( port === undefined ){
 	port = 8888;
 }
 var server = new Hapi.Server();
-server.connection({ port: port, routes: { cors: true }});
+server.connection({ port: port, 
+					routes: { cors: 
+								{origin: ['*'], 
+								headers: ["Accept", "Authorization", "Content-Type", "If-None-Match", "Accept-language"]
+								}
+							}
+				});
+
 server.register(Inert, function () {});
 
 var root = process.cwd() + '/';

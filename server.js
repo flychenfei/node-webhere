@@ -16,14 +16,25 @@ var server = new Hapi.Server();
 server.connection({ port: port, 
 					routes: { cors: 
 								{origin: ['*'], 
-								headers: ["Accept", "Authorization", "Content-Type", "If-None-Match", "Accept-language"]
+								additionalHeaders: ["Accept-language"]
 								}
 							}
 				});
+//server.connection({ port: port, routes: { cors: true} });
+//server.connection({ port: port });
 
 server.register(Inert, function () {});
 
 var root = process.cwd() + '/';
+
+// server.route({
+// 	method: '*',
+// 	path: '/{path*}',
+// 	handler: function (request, reply) {
+// 		reply('Hello, ' + encodeURIComponent(request.params.name) + '!').header("Access-Control-Allow-Origin","*").hold();
+// 	}
+// });
+
 
 server.route({
 	method: '*',

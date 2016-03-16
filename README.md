@@ -7,7 +7,12 @@ From Ted Patrick <ted@tedpatrick.com> (http://tedpatrick.com/)
 - Add header "Access-Control-Allow-Origin" "*" to all request. 
 
 # Install
-npm install -g webhere
+```
+npm install -g https://github.com/jeremychone/node-webhere.git
+```
+Note yet on npm
+
+
 
 # Use
 Start hapijs webserver on port 9000 and start browser when complete

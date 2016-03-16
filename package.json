@@ -10,9 +10,9 @@
     "url": "https://github.com/jeremychone/webhere/issues"
   },
   "dependencies": {
-    "hapi": "^13.2.1"
+    "hapi": "^13.2.1",
+    "inert": "^3.2.0"
   },
-
   "homepage": "https://github.com/jeremychone/webhere",
   "license": "BSD-3-Clause",
   "main": "server.js",

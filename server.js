@@ -26,7 +26,7 @@ server.ext({
 	type: 'onPostHandler',
 	method: function (request, reply) {
 		//request.setUrl('/test');
-		if (request.response){
+		if (request.response && request.response.header){
 			//console.log("set response header");
 			request.response.header('Access-Control-Allow-Origin', '*');
 			request.response.header('access-control-expose-headers', 'WWW-Authenticate,Server-Authorization');

@@ -4,6 +4,7 @@
 
 var Hapi = require( 'hapi' );
 var Inert = require('inert');
+var path = require("path");
 var exec = require( 'child_process' ).exec;
 
 var isWin = /^win/.test( process.platform );
@@ -20,21 +21,20 @@ server.connection({ port: port,
 								}
 							}
 				});
-//server.connection({ port: port, routes: { cors: true} });
-//server.connection({ port: port });
+
+server.ext({
+	type: 'onPostHandler',
+	method: function (request, reply) {
+		//request.setUrl('/test');
+		request.response.header('Access-Control-Allow-Origin', '*');
+		//console.log(request.response);
+		return reply.continue();
+	}
+});
 
 server.register(Inert, function () {});
 
 var root = process.cwd() + '/';
-
-// server.route({
-// 	method: '*',
-// 	path: '/{path*}',
-// 	handler: function (request, reply) {
-// 		reply('Hello, ' + encodeURIComponent(request.params.name) + '!').header("Access-Control-Allow-Origin","*").hold();
-// 	}
-// });
-
 
 server.route({
 	method: '*',

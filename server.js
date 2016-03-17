@@ -26,7 +26,11 @@ server.ext({
 	type: 'onPostHandler',
 	method: function (request, reply) {
 		//request.setUrl('/test');
-		request.response.header('Access-Control-Allow-Origin', '*');
+		if (request.response){
+			//console.log("set response header");
+			request.response.header('Access-Control-Allow-Origin', '*');
+			request.response.header('access-control-expose-headers', 'WWW-Authenticate,Server-Authorization');
+		}
 		//console.log(request.response);
 		return reply.continue();
 	}
